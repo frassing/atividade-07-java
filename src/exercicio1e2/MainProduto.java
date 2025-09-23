@@ -28,10 +28,8 @@ public class MainProduto {
             System.out.println("Preço com 0% de desconto: R$ " + lapiseira.aplicarDesconto(0));
             System.out.println("Preço 50% de desconto: R$ " + lapiseira.aplicarDesconto(50));
 //            System.out.println("Preço com tentativa de desconto de −5: R$ " + lapiseira.aplicarDesconto(-5));
-        } catch (DescontoInvalidoException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        } catch (IllegalArgumentException err) {
-            System.out.println(err.getMessage());
         }
     }
 }
