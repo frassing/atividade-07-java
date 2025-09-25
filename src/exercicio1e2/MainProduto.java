@@ -5,31 +5,66 @@ public class MainProduto {
         try {
             Produto borrachaE = new Produto("borracha escolar", 1.8, 0);
 
+            System.out.println("SITUAÇÃO 1 - Produto criado com sucesso!");
             System.out.println("Produto: " + borrachaE.getNome());
             System.out.println("Valor: R$ " + borrachaE.getPreco());
             System.out.println("Em estoque: " + borrachaE.getQuantidadeEmEstoque());
 
-            Produto lapiseira = new Produto("Lapiseira 0.5", 4.5, 8);
-//            lapiseira.setPreco(-2);
-//            lapiseira.setQuantidadeEmEstoque(-1);
+            System.out.println("\nSITUAÇÃO 2 - Aumentar quantidade com sucesso!");
+            borrachaE.setQuantidadeEmEstoque(2);
+            System.out.println("Em estoque agora: " + borrachaE.getQuantidadeEmEstoque());
 
+            System.out.println("\nSITUAÇÃO 3 - Aplicar desconto de 5% com sucesso!");
+            System.out.println("Valor antes: R$ " + borrachaE.getPreco());
+            borrachaE.aplicarDesconto(5);
+            System.out.println("Valor após desconto: R$ " + borrachaE.getPreco());
 
-            System.out.println("\n=====================");
-            System.out.println("Produto: " + lapiseira.getNome());
-            System.out.println("Valor: R$ " + lapiseira.getPreco());
-            System.out.println("Em estoque: " + lapiseira.getQuantidadeEmEstoque());
-
-            System.out.println("\nDescontos");
-            System.out.println("Produto: " + borrachaE.getNome());
-            System.out.println("Preço com 10% de desconto: R$ " + borrachaE.aplicarDesconto(10));
-
-            System.out.println("\nProduto: " + lapiseira.getNome());
-            System.out.println("Preço com 25% de desconto: R$ " + lapiseira.aplicarDesconto(25));
-            System.out.println("Preço com 0% de desconto: R$ " + lapiseira.aplicarDesconto(0));
-            System.out.println("Preço 50% de desconto: R$ " + lapiseira.aplicarDesconto(50));
-//            System.out.println("Preço com tentativa de desconto de −5: R$ " + lapiseira.aplicarDesconto(-5));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+
+        try {
+            System.out.println("\nSITUAÇÃO 4 - Tentar criar produto com nome vazio");
+            Produto lapiseira = new Produto("", 4.5, 8);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("\nSITUAÇÃO 5 - Tentar colocar o preço com um valor negativo");
+            Produto lapiseira = new Produto("Lapiseira 0.5", -12, 8);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("\nSITUAÇÃO 6 - Tentar colocar quantidade em estoque com um valor negativo");
+            Produto lapiseira = new Produto("Lapiseira 0.5", 4.20, -2);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("\nSITUAÇÃO 7 - Tentar aplicar desconto com um valor negativo");
+            Produto lapiseira = new Produto("Lapiseira 0.5", 4.20, 20);
+            lapiseira.aplicarDesconto(-2);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("\nSITUAÇÃO 8 - Tentar aplicar desconto com um valor acima do limite");
+            Produto lapiseira = new Produto("Lapiseira 0.5", 4.20, 20);
+            lapiseira.aplicarDesconto(55);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }
