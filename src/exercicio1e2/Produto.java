@@ -16,7 +16,7 @@ public class Produto {
     }
 
     public void setNome(String nome) {
-        if (nome.isEmpty() || nome == null) throw new IllegalArgumentException("O nome não pode ser vazio");
+        if (nome.isEmpty() || nome == null) throw new IllegalArgumentException("O nome do produto não pode estar vazio.");
         this.nome = nome;
     }
 
@@ -38,8 +38,8 @@ public class Produto {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
 
-    public double aplicarDesconto(double porcentagem) {
+    public void aplicarDesconto(double porcentagem) {
         if (porcentagem < 0 || porcentagem > 50) throw new DescontoInvalidoException("Valor inválido! Desconto deve ser entre 0 e 50.");
-        return getPreco() - (getPreco() * porcentagem/100);
+        setPreco(this.preco - (this.preco * porcentagem/100));
     }
 }
