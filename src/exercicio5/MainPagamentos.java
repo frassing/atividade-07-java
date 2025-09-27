@@ -3,9 +3,8 @@ package exercicio5;
 import java.math.BigDecimal;
 
 import static exercicio5.Pix.TipoChave.CELULAR;
-import static exercicio5.Pix.TipoChave.CPF;
 
-public class SistemaPagamentos {
+public class MainPagamentos {
     public static void main(String[] args) {
         try {
 //            FormaPagamento pixCpf = new Pix(CPF, "0123456729"); // Chave com número faltando

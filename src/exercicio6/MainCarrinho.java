@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
-public class SistemaCarrinhoCompras {
+public class MainCarrinho {
     public static void main(String[] args) {
 //        CRIAÇÃO DOS PRODUTOS
         Produto p1 = new Produto("Escova Pets", new Dinheiro(new BigDecimal("12.90"), Moeda.BRL));

@@ -1,6 +1,6 @@
 package exercicio4;
 
-public class Principal {
+public class MainTransporte {
     public static void main(String[] args) {
         try {
             IMeioTransporte carro = new Carro();
